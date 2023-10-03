@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../components/Home";
 import Login from "./Login";
 import App from "../App";
+import Home from "../components/Home/Home/Home";
+import Cards from "../components/Home/Cards/Cards";
+
 
 const router = createBrowserRouter([
     {
@@ -10,8 +12,11 @@ const router = createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<Home />
+                element:<Home />,
+                loader: ()=>fetch('http://localhost:5000/cards')
+                
             },
+              
             {
                 path:'login',
                 element:<Login />
