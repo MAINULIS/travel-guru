@@ -21,10 +21,10 @@ const Header = () => {
                                 />
                                 
                             </Form>
-                            <Link className='text-decoration-none ms-4 text-white' to='/'>home</Link>
+                            <Link className='text-decoration-none ms-4 text-white' to='/'>News</Link>
                             <Link className='text-decoration-none ms-4 text-white' to='/'>Destination</Link>
                             <Link className='text-decoration-none ms-4 text-white' to='/'>Contact</Link>
-                            <Link className='text-decoration-none ms-4 text-white' to='/'>Login</Link>
+                            <Link className='text-decoration-none ms-4 text-white' to='/login'>Login</Link>
 
                         </Nav>
 
