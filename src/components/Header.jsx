@@ -1,8 +1,18 @@
-import React from 'react';
-import { Container, Form, Nav, Navbar } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
 
 const Header = () => {
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogOut = () =>{
+        logOut()
+        .then()
+        .catch(error=>{
+            console(error.message)
+        })
+    }
     return (
         <Container >
             <Navbar collapseOnSelect expand="lg" className='pt-5'>
@@ -24,8 +34,13 @@ const Header = () => {
                             <Link className='text-decoration-none ms-4 text-white' to='/'>News</Link>
                             <Link className='text-decoration-none ms-4 text-white' to='/'>Destination</Link>
                             <Link className='text-decoration-none ms-4 text-white' to='/'>Contact</Link>
-                            <Link className='text-decoration-none ms-4 text-white' to='/login'>Login</Link>
-
+                            {
+                                user ?
+                                <Button onClick={handleLogOut} className='py-1 px-4 ms-4' variant="dark">LogOut</Button> :
+                                <Link to='/login'>
+                                    <Button className='py-1 px-4 ms-5' variant="dark">Login</Button>
+                                </Link>
+                            }
                         </Nav>
 
                     </Navbar.Collapse>

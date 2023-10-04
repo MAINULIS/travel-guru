@@ -27,9 +27,10 @@ const CardDetails = () => {
                         <Form.Group className="mb-3 text-info " controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="Remember email & password" />
                         </Form.Group>
+                        <h2>RangeDatePicker</h2>
 
                         <Button variant="warning w-100 my-3 fw-bold" type="submit">
-                           Start Book Now
+                            Start Book Now
                         </Button>
                     </Form>
                 </div>
