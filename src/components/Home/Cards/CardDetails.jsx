@@ -29,9 +29,12 @@ const CardDetails = () => {
                         </Form.Group>
                         <h2>RangeDatePicker</h2>
 
-                        <Button variant="warning w-100 my-3 fw-bold" type="submit">
-                            Start Book Now
-                        </Button>
+                        <Link to="/booking">
+                            <Button variant="warning w-100 my-3 fw-bold" type="submit">
+                                Start Book Now
+                            </Button>
+                        </Link>
+
                     </Form>
                 </div>
             </div>

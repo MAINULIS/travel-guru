@@ -1,10 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
     const {login} = useContext(AuthContext);
+    
+    const navigate = useNavigate();
+    let location = useLocation();
+
+    const from = location.state?.from?.pathname  || '/';
+
+    
 
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
@@ -22,6 +29,7 @@ const Login = () => {
         setSuccess('User has been successfully logged in')
         event.target.reset();
         setError('')
+        navigate(from, {replace:true})
     })
     .catch(error =>{
         setError(error.message);

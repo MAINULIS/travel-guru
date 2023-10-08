@@ -6,6 +6,8 @@ import Cards from "../components/Home/Cards/Cards";
 import CardDetails from "../components/Home/Cards/CardDetails";
 import LoginLayout from "../components/layout/LoginLayout";
 import Register from "./Register";
+import Booking from "../components/Booking";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -40,6 +42,10 @@ const router = createBrowserRouter([
             {
                 path:'register',
                 element:<Register />
+            },
+            {
+                path:'booking',
+                element:<PrivateRoute> <Booking></Booking> </PrivateRoute>
             }
         ]
     },
